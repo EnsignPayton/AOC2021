@@ -1,4 +1,4 @@
-﻿forward 8
+forward 8
 forward 9
 forward 9
 down 3

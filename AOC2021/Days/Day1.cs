@@ -1,15 +1,8 @@
-﻿namespace AOC2021;
+﻿namespace AOC2021.Days;
 
-public static class Day1
+public class Day1 : DayBase<int[]>
 {
-    public static int[] RealData() => File.ReadAllLines("Day1.txt").Select(int.Parse).ToArray();
-
-    public static int[] FakeData() => new[]
-    {
-        199, 200, 208, 210, 200, 207, 240, 269, 260, 263
-    };
-
-    public static int Puzzle1(int[] data)
+    public override int Puzzle1(int[] data)
     {
         var result = 0;
 
@@ -22,7 +15,7 @@ public static class Day1
         return result;
     }
 
-    public static int Puzzle2(int[] data)
+    public override int Puzzle2(int[] data)
     {
         var result = 0;
 
@@ -36,4 +29,9 @@ public static class Day1
 
         return result;
     }
+
+    protected override int[] Parse(string input) =>
+        input.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries)
+            .Select(int.Parse)
+            .ToArray();
 }

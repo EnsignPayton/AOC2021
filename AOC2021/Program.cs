@@ -1,5 +1,4 @@
-﻿using AOC2021;
-
-var data = Day5.RealData();
-var result = Day5.Puzzle2(data);
+﻿var day = new AOC2021.Days.Day5();
+var data = day.RealData;
+var result = day.Puzzle2(data);
 Console.WriteLine(result);

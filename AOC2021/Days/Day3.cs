@@ -1,27 +1,10 @@
 ﻿using System.Text;
 
-namespace AOC2021;
+namespace AOC2021.Days;
 
-public static class Day3
+public class Day3 : DayBase<string[]>
 {
-    public static string[] RealData() => File.ReadAllLines("Day3.txt")
-        .Where(x => !string.IsNullOrEmpty(x)).ToArray();
-
-    public static string[] FakeData() =>
-        @"00100
-11110
-10110
-10111
-10101
-01111
-00111
-11100
-10000
-11001
-00010
-01010".Split(Environment.NewLine);
-
-    public static int Puzzle1(string[] data)
+    public override int Puzzle1(string[] data)
     {
         var maxpos = data.Max(x => x.Length);
         var gamma = new StringBuilder(maxpos);
@@ -54,7 +37,7 @@ public static class Day3
                Convert.ToInt32(epsilon.ToString(), 2);
     }
 
-    public static int Puzzle2(string[] data)
+    public override int Puzzle2(string[] data)
     {
         var oxy = OxyBit(0, data);
         var co2 = Co2Bit(0, data);
@@ -109,4 +92,8 @@ public static class Day3
 
         return expected + Co2Bit(++pos, newData);
     }
+
+    protected override string[] Parse(string input) =>
+        input.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries)
+            .ToArray();
 }
