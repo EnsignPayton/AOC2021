@@ -2,7 +2,7 @@
 
 public class Day1 : DayBase<int[]>
 {
-    public override int Puzzle1(int[] data)
+    public override long Puzzle1(int[] data)
     {
         var result = 0;
 
@@ -15,7 +15,7 @@ public class Day1 : DayBase<int[]>
         return result;
     }
 
-    public override int Puzzle2(int[] data)
+    public override long Puzzle2(int[] data)
     {
         var result = 0;
 

@@ -37,7 +37,7 @@ public class Day4 : DayBase<Day4.Bingo>
         }
     }
 
-    public override int Puzzle1(Bingo data)
+    public override long Puzzle1(Bingo data)
     {
         foreach (var call in data.Calls)
         {
@@ -101,7 +101,7 @@ public class Day4 : DayBase<Day4.Bingo>
         return 0;
     }
 
-    public override int Puzzle2(Bingo data)
+    public override long Puzzle2(Bingo data)
     {
         var scores = new List<int>();
         var ignoredBoards = new List<int>();

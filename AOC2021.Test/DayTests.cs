@@ -65,13 +65,49 @@ public class DayTests
         AssertPuzzle2(12, new Day5());
     }
 
-    private static void AssertPuzzle1<TData>(int expected, DayBase<TData> day)
+    [Fact]
+    public void Day6Puzzle1()
+    {
+        AssertPuzzle1(5934, new Day6());
+    }
+
+    [Fact]
+    public void Day6Puzzle2()
+    {
+        AssertPuzzle2(26984457539, new Day6());
+    }
+
+    [Fact]
+    public void Day7Puzzle1()
+    {
+        AssertPuzzle1(37, new Day7());
+    }
+
+    [Fact]
+    public void Day7Puzzle2()
+    {
+        AssertPuzzle2(168, new Day7());
+    }
+
+    [Fact]
+    public void Day8Puzzle1()
+    {
+        AssertPuzzle1(26, new Day8());
+    }
+
+    [Fact]
+    public void Day8Puzzle2()
+    {
+        AssertPuzzle2(61229, new Day8());
+    }
+
+    private static void AssertPuzzle1<TData>(long expected, DayBase<TData> day)
     {
         var result = day.Puzzle1(day.FakeData);
         Assert.Equal(expected, result);
     }
 
-    private static void AssertPuzzle2<TData>(int expected, DayBase<TData> day)
+    private static void AssertPuzzle2<TData>(long expected, DayBase<TData> day)
     {
         var result = day.Puzzle2(day.FakeData);
         Assert.Equal(expected, result);

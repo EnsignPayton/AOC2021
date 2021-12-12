@@ -9,7 +9,7 @@ public class Day2 : DayBase<Day2.Vector[]>
 
     public record Vector(Direction Direction, int Magnitude);
 
-    public override int Puzzle1(Vector[] data)
+    public override long Puzzle1(Vector[] data)
     {
         var hPos = 0;
         var vPos = 0;
@@ -27,7 +27,7 @@ public class Day2 : DayBase<Day2.Vector[]>
         return hPos * vPos;
     }
 
-    public override int Puzzle2(Vector[] data)
+    public override long Puzzle2(Vector[] data)
     {
         var hPos = 0;
         var vPos = 0;

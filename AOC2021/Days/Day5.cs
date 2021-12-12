@@ -13,7 +13,7 @@ public class Day5 : DayBase<Day5.Line[]>
         }
     }
 
-    public override int Puzzle1(Line[] data)
+    public override long Puzzle1(Line[] data)
     {
         var maxX = data.Max(x => Math.Max(x.X0, x.X1)) + 1;
         var maxY = data.Max(x => Math.Max(x.Y0, x.Y1)) + 1;
@@ -61,7 +61,7 @@ public class Day5 : DayBase<Day5.Line[]>
         return count;
     }
 
-    public override int Puzzle2(Line[] data)
+    public override long Puzzle2(Line[] data)
     {
         var maxX = data.Max(x => Math.Max(x.X0, x.X1)) + 1;
         var maxY = data.Max(x => Math.Max(x.Y0, x.Y1)) + 1;

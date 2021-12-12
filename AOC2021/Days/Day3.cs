@@ -4,7 +4,7 @@ namespace AOC2021.Days;
 
 public class Day3 : DayBase<string[]>
 {
-    public override int Puzzle1(string[] data)
+    public override long Puzzle1(string[] data)
     {
         var maxpos = data.Max(x => x.Length);
         var gamma = new StringBuilder(maxpos);
@@ -37,7 +37,7 @@ public class Day3 : DayBase<string[]>
                Convert.ToInt32(epsilon.ToString(), 2);
     }
 
-    public override int Puzzle2(string[] data)
+    public override long Puzzle2(string[] data)
     {
         var oxy = OxyBit(0, data);
         var co2 = Co2Bit(0, data);
