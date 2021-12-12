@@ -2,7 +2,7 @@
 
 public class Day8 : DayBase<Day8.Line[]>
 {
-    public record Line(IList<string> Patterns, IList<string> Outputs)
+    public record Line(string[] Patterns, string[] Outputs)
     {
         public static Line Parse(string value)
         {
