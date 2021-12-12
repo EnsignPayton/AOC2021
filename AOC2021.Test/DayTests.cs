@@ -113,6 +113,18 @@ public class DayTests
         AssertPuzzle2(1134, new Day9());
     }
 
+    [Fact]
+    public void Day10Puzzle1()
+    {
+        AssertPuzzle1(26397, new Day10());
+    }
+
+    [Fact]
+    public void Day10Puzzle2()
+    {
+        AssertPuzzle2(288957, new Day10());
+    }
+
     private static void AssertPuzzle1<TData>(long expected, DayBase<TData> day)
     {
         var result = day.Puzzle1(day.FakeData);
