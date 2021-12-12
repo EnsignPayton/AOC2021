@@ -5,135 +5,43 @@ namespace AOC2021.Test;
 
 public class DayTests
 {
-    [Fact]
-    public void Day1Puzzle1()
+    [Theory]
+    [InlineData(1, 1, 7)]
+    [InlineData(1, 2, 5)]
+    [InlineData(2, 1, 150)]
+    [InlineData(2, 2, 900)]
+    [InlineData(3, 1, 198)]
+    [InlineData(3, 2, 230)]
+    [InlineData(4, 1, 4512)]
+    [InlineData(4, 2, 1924)]
+    [InlineData(5, 1, 5)]
+    [InlineData(5, 2, 12)]
+    [InlineData(6, 1, 5934)]
+    [InlineData(6, 2, 26984457539)]
+    [InlineData(7, 1, 37)]
+    [InlineData(7, 2, 168)]
+    [InlineData(8, 1, 26)]
+    [InlineData(8, 2, 61229)]
+    [InlineData(9, 1, 15)]
+    [InlineData(9, 2, 1134)]
+    [InlineData(10, 1, 26397)]
+    [InlineData(10, 2, 288957)]
+    [InlineData(11, 1, 1656)]
+    [InlineData(11, 2, 195)]
+    public void TestPuzzle(int day, int num, long expected)
     {
-        AssertPuzzle1(7, new Day1());
-    }
+        var type = typeof(DayBase<>).Assembly.GetTypes()
+            .Single(x => x.Name.EndsWith("Day" + day));
 
-    [Fact]
-    public void Day1Puzzle2()
-    {
-        AssertPuzzle2(5, new Day1());
-    }
+        var instance = Activator.CreateInstance(type);
 
-    [Fact]
-    public void Day2Puzzle1()
-    {
-        AssertPuzzle1(150, new Day2());
-    }
+        var dataProp = type.GetProperty("FakeData")!;
+        var data = dataProp.GetValue(instance);
 
-    [Fact]
-    public void Day2Puzzle2()
-    {
-        AssertPuzzle2(900, new Day2());
-    }
+        var method = type.GetMethod("Puzzle" + num)!;
 
-    [Fact]
-    public void Day3Puzzle1()
-    {
-        AssertPuzzle1(198, new Day3());
-    }
+        var result = method.Invoke(instance, new[]{data});
 
-    [Fact]
-    public void Day3Puzzle2()
-    {
-        AssertPuzzle2(230, new Day3());
-    }
-
-    [Fact]
-    public void Day4Puzzle1()
-    {
-        AssertPuzzle1(4512, new Day4());
-    }
-
-    [Fact]
-    public void Day4Puzzle2()
-    {
-        AssertPuzzle2(1924, new Day4());
-    }
-
-    [Fact]
-    public void Day5Puzzle1()
-    {
-        AssertPuzzle1(5, new Day5());
-    }
-
-    [Fact]
-    public void Day5Puzzle2()
-    {
-        AssertPuzzle2(12, new Day5());
-    }
-
-    [Fact]
-    public void Day6Puzzle1()
-    {
-        AssertPuzzle1(5934, new Day6());
-    }
-
-    [Fact]
-    public void Day6Puzzle2()
-    {
-        AssertPuzzle2(26984457539, new Day6());
-    }
-
-    [Fact]
-    public void Day7Puzzle1()
-    {
-        AssertPuzzle1(37, new Day7());
-    }
-
-    [Fact]
-    public void Day7Puzzle2()
-    {
-        AssertPuzzle2(168, new Day7());
-    }
-
-    [Fact]
-    public void Day8Puzzle1()
-    {
-        AssertPuzzle1(26, new Day8());
-    }
-
-    [Fact]
-    public void Day8Puzzle2()
-    {
-        AssertPuzzle2(61229, new Day8());
-    }
-
-    [Fact]
-    public void Day9Puzzle1()
-    {
-        AssertPuzzle1(15, new Day9());
-    }
-
-    [Fact]
-    public void Day9Puzzle2()
-    {
-        AssertPuzzle2(1134, new Day9());
-    }
-
-    [Fact]
-    public void Day10Puzzle1()
-    {
-        AssertPuzzle1(26397, new Day10());
-    }
-
-    [Fact]
-    public void Day10Puzzle2()
-    {
-        AssertPuzzle2(288957, new Day10());
-    }
-
-    private static void AssertPuzzle1<TData>(long expected, DayBase<TData> day)
-    {
-        var result = day.Puzzle1(day.FakeData);
-        Assert.Equal(expected, result);
-    }
-
-    private static void AssertPuzzle2<TData>(long expected, DayBase<TData> day)
-    {
-        var result = day.Puzzle2(day.FakeData);
         Assert.Equal(expected, result);
     }
 }
