@@ -28,6 +28,8 @@ public class DayTests
     [InlineData(10, 2, 288957)]
     [InlineData(11, 1, 1656)]
     [InlineData(11, 2, 195)]
+    [InlineData(12, 1, 10)]
+    [InlineData(12, 2, 36)]
     public void TestPuzzle(int day, int num, long expected)
     {
         var type = typeof(DayBase<>).Assembly.GetTypes()
