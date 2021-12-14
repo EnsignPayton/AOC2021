@@ -2,7 +2,7 @@
 
 namespace AOC2021.Days;
 
-public class Day3 : DayBase<string[]>
+public class Day03 : DayBase<string[]>
 {
     public override long Puzzle1(string[] data)
     {

@@ -1,6 +1,6 @@
 ﻿namespace AOC2021.Days;
 
-public class Day4 : DayBase<Day4.Bingo>
+public class Day04 : DayBase<Day04.Bingo>
 {
     public class Bingo
     {

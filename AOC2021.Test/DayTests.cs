@@ -33,7 +33,7 @@ public class DayTests
     public void TestPuzzle(int day, int num, long expected)
     {
         var type = typeof(DayBase<>).Assembly.GetTypes()
-            .Single(x => x.Name.EndsWith("Day" + day));
+            .Single(x => x.Name.EndsWith($"Day{day:D2}"));
 
         var instance = Activator.CreateInstance(type);
 

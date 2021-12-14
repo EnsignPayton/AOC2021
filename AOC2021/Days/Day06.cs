@@ -1,6 +1,6 @@
 ﻿namespace AOC2021.Days;
 
-public class Day6 : DayBase<int[]>
+public class Day06 : DayBase<int[]>
 {
     public override long Puzzle1(int[] data)
     {

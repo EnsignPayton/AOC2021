@@ -1,6 +1,6 @@
 ﻿namespace AOC2021.Days;
 
-public class Day5 : DayBase<Day5.Line[]>
+public class Day05 : DayBase<Day05.Line[]>
 {
     public record Line(int X0, int Y0, int X1, int Y1)
     {

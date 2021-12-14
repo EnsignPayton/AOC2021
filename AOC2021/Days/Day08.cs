@@ -1,6 +1,6 @@
 ﻿namespace AOC2021.Days;
 
-public class Day8 : DayBase<Day8.Line[]>
+public class Day08 : DayBase<Day08.Line[]>
 {
     public record Line(string[] Patterns, string[] Outputs)
     {

@@ -1,6 +1,6 @@
 ﻿namespace AOC2021.Days;
 
-public class Day2 : DayBase<Day2.Vector[]>
+public class Day02 : DayBase<Day02.Vector[]>
 {
     public enum Direction
     {
